@@ -1,0 +1,23 @@
+i{
+    color: mediumseagreen;
+    font-family: calibri;
+    font-size: 30px;
+}
+.empdetails{
+    border: 1px solid black;
+   /* margin-left:20px; */
+   margin-top:20px;
+
+
+}
+td{
+    font-family: courier;
+    font-size: 20px;
+    font-style: italic;
+    border: 1px solid black;
+    color: black ;
+    /* font-weight: bold; */
+}
+.empDiv{
+    margin-left: 42%;
+}

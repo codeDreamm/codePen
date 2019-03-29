@@ -1,0 +1,41 @@
+<div class="empDiv">
+  <th>Hi <u 
+    style="color:green"  [style.font-weight]="italic"> {{getCandidateName()}}</u> Here are your Details: </th>
+  <br>
+<table class="empdetails">
+  <tr>
+    <th attr.colspan='{{columnSpan}}'> Employee Summary</th>
+  </tr>
+  <tr>
+    <td><b>First Name</b></td>
+    <td>{{Firstname}}</td>
+  </tr>
+  <tr>
+    <td><b>Last Name</b></td>
+    <td>{{Lastname}}</td>
+  </tr>
+  <tr *ngIf='showDetails'>
+    <td ><b>Age</b></td>
+    <td>{{Age}}</td>
+  </tr>
+  <tr *ngIf='showDetails'>
+    <td><b>Salary</b></td>
+    <td>{{Salary}}</td>
+  </tr>
+  <tr *ngIf='showDetails'>
+    <td><b>Gender</b></td>
+    <td>{{Gender}}</td>
+  </tr>
+ <!--  <tr>
+    <td><button [ngStyle]='addStyle()'>Submit</button></td>
+  </tr> -->
+</table>
+<!--  ************Two Way Data Binding*******************
+Enter Your Name<input [(ngModel)]='name'>
+<br>
+You have Entered : {{name}}
+<br>
+-->
+<button [ngStyle]='addStyle()' (click)='toggleDetails()'>{{showDetails? 'Hide' : 'Show' }} Details</button>
+<!-- <button  style="color:green">Accent</button> -->
+</div>

@@ -1,0 +1,67 @@
+<div class="empDiv">
+  <app-employee-count [all]="getTotalEmployeeCount()"
+  [male]="getTotalMaleEmployeeCount()"
+  [female]="getTotalFemaleEmployeeCount()"
+  (countOnRadioButtonSelectionChange)="onRadioButtonSelectionChange($event)"></app-employee-count>
+  <br>
+  
+<table style="border: 1px solid #000000; margin-left:35%;margin-top:20px;">
+ 
+  <tr>
+    <th>First Name</th>
+    <th> Last Name</th>
+    <th>Age</th>
+    <th> Salary</th>
+    <th>Gender</th>
+    <!-- <th>Is First</th>
+    <th>Is Last</th>
+      <th>Is Even</th>
+      <th>Is Odd</th>
+      <th>Index</th> -->
+  </tr>
+  <ng-container *ngFor="let emp of employees">
+  <tr  *ngIf="selectedRadioButton=='All' || selectedRadioButton==emp.Gender"> 
+  <!-- trackBy:trackByEmpName; let i=index; 
+  let isFirst=first; let isLast=last;let isEven=even; let isOdd=odd"> -->
+    
+     <td>{{emp.Firstname | employeeTitle:emp.Gender }}</td>
+    <td>{{emp.Lastname}}</td>
+  
+    <td>{{emp.Age}}</td>
+  
+    <td>{{emp.Salary}}</td>
+  
+    <td>{{emp.Gender}}</td> 
+    
+   <!--  <td>{{isFirst}}</td>
+    <td>{{isLast}}</td>
+    <td>{{isEven}}</td>
+    <td>{{isOdd}}</td>
+    <td>{{i}}</td> -->
+  </tr>
+</ng-container>
+    <tr *ngIf='!employees || employees.length==0'>
+      <td colspan='5'> <b>Nothing to Display</b></td>
+    </tr>
+ 
+ <!--  <tr>
+    <td><button [ngStyle]='addStyle()'>Submit</button></td>
+  </tr> -->
+</table>
+<br>
+<!-- <button (click)='getEmploeeyList()'>Refresh Employee</button> -->
+<!--  ************Two Way Data Binding*******************
+Enter Your Name<input [(ngModel)]='name'>
+<br>
+You have Entered : {{name}}
+<br>
+-->
+<!-- <button [ngStyle]='addStyle()' (click)='toggleDetails()'>{{showDetails? 'Hide' : 'Show' }} Details</button> -->
+<!-- <button  style="color:green">Accent</button> -->
+</div>
+
+<!-- /*******************LifeCycleHookExampl********************/ -->
+Your Text:<input type="text" [(ngModel)]='userText'>
+<app-life-cycle-hook-expl [simpleText]='userText'></app-life-cycle-hook-expl>
+<!-- simpleText is the property of LifeCycleHookExampl component we are binding this
+property to usertext property of empList component -->

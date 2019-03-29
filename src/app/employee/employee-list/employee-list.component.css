@@ -1,0 +1,12 @@
+td{
+     /* background-origin: padding-box; */
+     border: 1px solid black;
+     /* border-collapse: collapse; */
+     padding: 5px;
+}
+th{
+    /* background-origin: padding-box; */
+    border: 1px solid black;
+    /* border-collapse: collapse; */
+    padding: 5px;
+}
